@@ -1,307 +1,584 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang='en'>
 <head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='description' content='Security Analyst portfolio of Ezhil Prasaath Senthilnathan.'>
+  <title>Ezhil Prasaath | Security Analyst Portfolio</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #111111;
+      --muted: #4b5563;
+      --line: #d1d5db;
+      --accent: #2563eb;
+      --accent-soft: #eff6ff;
+    }
 
-     <title>Ezhil Prasaath</title>
+    * { box-sizing: border-box; }
 
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-     <meta name="description" content="">
-     <meta name="keywords" content="">
-     <meta name="author" content="Tooplate">
-     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+    }
 
-     <link rel="stylesheet" href="css/bootstrap.min.css">
-     <link rel="stylesheet" href="css/all.min.css">
-     <link rel="stylesheet" href="css/owl.carousel.min.css">
-     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
 
-     <!-- MAIN CSS -->
-     <link rel="stylesheet" href="css/tooplate-ben-resume-style.css">
-<!--
--->
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus-visible {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(1080px, 92%);
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(6px);
+    }
+
+    .nav-wrap {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .site-nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .site-nav a {
+      color: var(--text);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus-visible {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--text);
+      padding: 8px 12px;
+      font-size: 0.92rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    main {
+      padding-bottom: 48px;
+    }
+
+    .hero {
+      padding: 56px 0 32px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 0.86rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0;
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 10px 0 12px;
+      font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+      line-height: 1.2;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+      font-size: 0.94rem;
+      font-weight: 600;
+      padding: 10px 14px;
+      text-decoration: none;
+      min-height: 40px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      text-decoration: none;
+      background: #1d4ed8;
+      border-color: #1d4ed8;
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus-visible {
+      text-decoration: none;
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .quick-links {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 0.92rem;
+    }
+
+    .section {
+      padding: 42px 0;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+      line-height: 1.25;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      max-width: 860px;
+    }
+
+    .about-grid {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      padding: 16px;
+    }
+
+    .panel h3 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+    }
+
+    .panel ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .panel li + li {
+      margin-top: 7px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .project h3 {
+      margin: 0 0 10px;
+      font-size: 1.04rem;
+    }
+
+    .project p {
+      margin: 0 0 10px;
+      color: var(--muted);
+    }
+
+    .project ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .cert-item {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: #ffffff;
+    }
+
+    .cert-item h3 {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    .cert-item p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 16px;
+      align-items: start;
+      margin-top: 18px;
+    }
+
+    .contact-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+      font-size: 0.96rem;
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #ffffff;
+      padding: 10px 12px;
+      min-height: 42px;
+    }
+
+    .contact-links a:hover,
+    .contact-links a:focus-visible {
+      color: var(--accent);
+      border-color: var(--accent);
+      text-decoration: none;
+      background: var(--accent-soft);
+    }
+
+    .footer-note {
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 960px) {
+      .skills-grid,
+      .project-list,
+      .cert-grid,
+      .about-grid,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 46px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .site-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid var(--line);
+      }
+
+      .site-nav.open {
+        display: flex;
+      }
+
+      .nav-wrap {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 12px 0;
+      }
+    }
+  </style>
 </head>
+<body>
+  <header class='site-header'>
+    <div class='container nav-wrap'>
+      <a class='brand' href='https://ezhilprasaath.com/' target='_blank' rel='noopener'>Ezhil Prasaath</a>
+      <button class='menu-toggle' id='menuToggle' aria-expanded='false' aria-controls='siteNav' aria-label='Toggle navigation'>Menu</button>
+      <nav class='site-nav' id='siteNav' aria-label='Primary'>
+        <a href='#about'>About</a>
+        <a href='#skills'>Skills</a>
+        <a href='#projects'>Projects</a>
+        <a href='#certifications'>Certifications</a>
+        <a href='#contact'>Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<body data-spy="scroll" data-target="#navbarNav" data-offset="50">
-
-    <!-- MENU BAR -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
-
-            <a class="navbar-brand" href="#">
-                Ezhil Prasaath Se
-            </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a href="#intro" class="nav-link smoothScroll">Introduction</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link smoothScroll">About Me</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="#testimonials" class="nav-link smoothScroll">Hobbies & Interests</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#courses" class="nav-link smoothScroll">Courses and Certificats</a>
-                </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link smoothScroll">Contact</a>
-                    </li>
-                </ul>
-
-                <div class="mt-lg-0 mt-3 mb-4 mb-lg-0">
-                    <a href="https://drive.google.com/file/d/1lwW8g7pE5kdqEUiKTkx89O0KjqYZe3n2/view?usp=sharing" class="custom-btn btn" download>Download CV</a>
-                </div>
-            </div>
-
+  <main>
+    <section class='hero'>
+      <div class='container'>
+        <p class='eyebrow'>Security Analyst Portfolio</p>
+        <h1>Ezhil Prasaath Senthilnathan</h1>
+        <p>
+          Security-focused Computer Science engineer with hands-on experience in vulnerability assessment,
+          web security testing, and Python-based automation. Focused on translating security findings into
+          clear, actionable remediation for risk-aware teams.
+        </p>
+        <div class='hero-actions'>
+          <a class='btn btn-primary' href='https://drive.google.com/file/d/1lwW8g7pE5kdqEUiKTkx89O0KjqYZe3n2/view?usp=sharing' target='_blank' rel='noopener'>Download Resume</a>
+          <a class='btn btn-secondary' href='#contact'>Contact</a>
         </div>
-    </nav>
-
-
-    <!-- HERO -->
-    <section class="hero d-flex flex-column justify-content-center align-items-center" id="intro">
-
-         <div class="container">
-            <div class="row">
-
-                  <div class="mx-auto col-lg-5 col-md-5 col-10">
-                      <img src="images/Ezhil.jpg" class="img-fluid" alt="Ben Resume HTML Template">
-                  </div>
-
-                   <div class="d-flex flex-column justify-content-center align-items-center col-lg-7 col-md-7 col-12">
-                        <div class="hero-text">
-
-                            <h1 class="hero-title">👋 I'm Ezhil Prasaath</h1>
-
-                            <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=connectwithezhil@gmail.com" class="email-link">
-                                connectwithezhil@gmail.com
-                            </a>
-                             <a href="https://drive.google.com/file/d/1lwW8g7pE5kdqEUiKTkx89O0KjqYZe3n2/view" class="hero-title" download>Download CV</a>
-                          
-                        </div>
-                    </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <section class="about section-padding" id="about">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-6 col-md-6 col-12">
-                    <h3 class="mb-4">Professional Summary</h3>
-
-                    <p>I'm an experienced B.Tech Computer Science Engineer skilled in Linux, Python, Java, and SQL. Strong background in Data Structures, Algorithms, Database Management Systems, Computer Networks, Software Engineering and Operating systems. Proficient in data mining and applying machine learning algorithms to large datasets. Specializes in social engineering, reverse engineering, and conducting detailed vulnerability audits</p>
-
-                    <p>Known for meticulous attention to detail, exceptional multitasking abilities, and proactive pursuit of technical knowledge. Committed to leveraging expertise to deliver effective solutions and drive organizational success.</p>
-
-                    <ul class="mt-4 mb-5 mb-lg-0 profile-list list-unstyled">
-                        <li><strong>Full Name :</strong> Ezhil Prasaath Se </li>
-                        <li>  
-                           </li>
-                        <!-- <li><strong>Date of Birth:</strong></li> -->
-
-                        <h6>Education
-                        </h6>
-
-                        <li> B.Tech Computer Science Engineering, Vellore Institute of Technology, Amaravati, Andhra Pradesh</li>
-
-                        </li>2022 - 2026</li>
-
-                        <h6>Contact Information
-                        </h6>
-
-                        <li><strong>Mobile number :</strong> +91 6383720169</li>
-
-                        <li href=email-link><strong>Email :</strong>ezhil123da@gmail.com</li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-5 mx-auto col-md-6 col-12">
-                    <img src="images/true-agency.jpg" class="about-image img-fluid" alt="Ben's Resume HTML Template">
-                </div>
-
-            </div>
-            <div class="row about-third">
-            	<div class="col-lg-4 col-md-4 col-12">
-                <h3>SKILLS</h3>
-                <li>Python</li>
-                <li>Java</li>
-                <li>R</li>
-                <li>MySQL</li>
-                <li>Linux - Kali & Ubuntu</li>
-                <li>PowerBI</li>
-                <li>HTML & CSS</li>
-                  <li>Git</li>
-                  <li>Cybersecurity analysis</li>
-                  <li>Project Management</li>
-                  <li>Risk management</li>
-                  <li>Financial management</li>
-                  <li>Audits</li>
-                </div>
-                <div class="col-lg-4 col-md-4 col-12">
-                <h3>Experience</h3>
-                <li>Vice-President & Club Advisor - BULLS&BEARS CLUB VITAP</li>
-
-                <li> September 2023 - June 2025 </li>
-                  
-                  <li>Leading marketing, documentation, and social media teams of our club.</p>
-                 <li> Cotributed to the communitiy created by our team for Finance enthusiast.</p>
-                </div>
-                <div class="col-lg-4 col-md-4 col-12">
-                <h3>Projects</h3>
-                <li>Autonomous car using GNSS & Raspberry-pi using Python, that moves in the given coordinates.</li>
-                <li>Website safety check: A website integrated with <strong>Vega</strong> tool.</li>
-                <li><strong>Data Mining : </strong> Data scraping, cleaning, transformation, ML algorithims: Apriori, Decision tree, Clustering, K-means and more. </li>
-                </div>
-            </div>
-        </div>  
-    </section>
-
-
-     <section class="testimonials section-padding" id="testimonials">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-12">
-                        <h3 class="mb-5 text-center">Hobbies and Interests</h3>
-
-                        <div class="owl-carousel owl-theme " id="testimonials-carousel"> 
-                            <div class="item">
-                                <div class="testimonials-thumb d-flex">
-                                    <div class="testimonials-image">
-                                        <img src="images/testimonials/tennis.jpg" class="img-fluid" alt="testimonials image">
-                                    </div>
-
-                                    <div class="testimonials-info">
-                                      <br></br>
-                                        <b>- Playing Tennis</b>
-                                      <br>
-                                        <b>- Investing</b>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="testimonials-thumb d-flex">
-                                    <div class="testimonials-image">
-                                        <img src="images/testimonials/trading.jpg" class="img-fluid" alt="testimonials image">
-                                    </div>
-
-                                    <div class="testimonials-info">
-                                      <br>
-                                    </br>
-                                        <b>- Forex Trading</b>
-                                        <br>
-
-                                        <strong>-Journaling</Strong>
-                                    </div>
-                                </div>
-                            </div>
-
-                    </div>
-
-               </div>
-          </div>
-     </section>
-
-
-     <section class="testimonials section-padding" id="courses">
-      <div class="container">
-           <div class="row">
-
-                <div class="col-12">
-                    <h3 class="mb-5 text-center">Courses and Certificates</h3>
-                    <div class="item">
-                      <div class="testimonials-thumb d-flex">
-                          <div class="testimonials-image">
-                              <img src="images/testimonials/coursera.png" class="img-fluid" alt="testimonials image">
-                              <br></br>
-                              <img src="images/testimonials/NCC A CERTIFICATE.jpg" class="img-fluid" alt="testimonials image">
-                          </div>
-
-
-
-                    
-                </div>
-
-           </div>
+        <ul class='quick-links'>
+          <li><a href='https://www.linkedin.com/in/ezhil-prasaath/' target='_blank' rel='noopener'>LinkedIn</a></li>
+          <li><a href='https://github.com/EzhilPrasaath' target='_blank' rel='noopener'>GitHub</a></li>
+          <li><a href='https://ezhilprasaath.com/' target='_blank' rel='noopener'>Portfolio Domain</a></li>
+        </ul>
       </div>
- </section>
+    </section>
 
-
-
-
-     <section class="contact section-padding pt-0" id="contact">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-6 col-md-6 col-12">
-            <form action="#" method="get" class="contact-form webform"  role="form">
-                
-                <div class="form-group d-flex flex-column-reverse">
-                    <input type="text" class="form-control" name="cf-name" id="cf-name" placeholder="Your Name">
-
-                    <label for="cf-name" class="webform-label">Full Name</label>
-                </div>
-
-                <div class="form-group d-flex flex-column-reverse">
-                    <input type="email" class="form-control" name="cf-email" id="cf-email" placeholder="Your Email">
-
-                    <label for="cf-email" class="webform-label">Your Email</label>
-                </div>
-
-                <div class="form-group d-flex flex-column-reverse">
-                    <textarea class="form-control" rows="5" name="cf-message" id="cf-message" placeholder="Your Message"></textarea>
-
-                    <label for="cf-message" class="webform-label">Message</label>
-                </div>
-
-                <button type="submit" class="form-control" id="submit-button" name="submit">Send</button>
-            </form>
-          </div>
-
-            <div class="mx-auto col-lg-4 col-md-6 col-12">
-                <h3 class="my-4 pt-4 pt-lg-0">Say hello @</h3>
-
-                <a href="tel:+91 6383720169">+91 6383720169</a>
-                <p>
-                    <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=connectwithezhil@gmail.com">
-                        connectwithezhil@gmail.com
-                        
-                    <i class="fas fa-arrow-right custom-icon"></i>
-                    </a>
-                </p>
-
-                <ul class="social-links mt-2">
-                    <li><a href="https://x.com/Ezhil1230" rel="noopener" class="fab fa-twitter"></a></li>
-                    <li><a href="https://www.linkedin.com/in/ezhil-prasaath/" rel="noopener" class="fab fa-linkedin"></a></li>
-                    <li><a href="https://github.com/ezhil1606" rel="noopener" class="fab fa-github"></a></li>
-                  </ul>
-                
-              <p class="copyright-text mt-5 pt-3">Copyright &copy; 2025 Ezhil Prasaath </p>
-                
-            </div>
-
+    <section id='about' class='section'>
+      <div class='container'>
+        <h2>About</h2>
+        <p class='lead'>
+          I am pursuing B.Tech in Computer Science and Engineering at VIT Andhra Pradesh (2022-2026),
+          with practical work across web application testing, security tool usage, and cloud-oriented systems.
+          Beyond technical execution, I focus on structured reporting, governance alignment, and collaborative
+          security communication.
+        </p>
+        <div class='about-grid'>
+          <article class='panel'>
+            <h3>Role-Relevant Focus</h3>
+            <ul>
+              <li>Vulnerability assessment and remediation-oriented reporting.</li>
+              <li>Security automation workflows using Python and testing tools.</li>
+              <li>Cloud and data engineering fundamentals supporting security analytics.</li>
+            </ul>
+          </article>
+          <article class='panel'>
+            <h3>Leadership and Impact</h3>
+            <ul>
+              <li>Led a 10-member cross-functional student team in finance and risk-awareness initiatives.</li>
+              <li>Contributed to campus events that reached 1000+ students.</li>
+              <li>Guided peer learning through mentorship and structured workshop planning.</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
-     <!-- SCRIPTS -->
-     <script src="js/jquery.min.js"></script>
-     <script src="js/bootstrap.min.js"></script>
-     <script src="js/smoothscroll.js"></script>
-     <script src="js/owl.carousel.min.js"></script>
-     <script src="js/custom.js"></script>
 
+    <section id='skills' class='section'>
+      <div class='container'>
+        <h2>Skills</h2>
+        <div class='skills-grid'>
+          <article class='panel'>
+            <h3>Security Operations</h3>
+            <ul>
+              <li>Vulnerability assessment and web application security checks.</li>
+              <li>Risk and compliance awareness (ISO 27001, GDPR, HIPAA, PCI-DSS).</li>
+              <li>Structured audit-style documentation and remediation mapping.</li>
+            </ul>
+          </article>
+          <article class='panel'>
+            <h3>Tools and Platforms</h3>
+            <ul>
+              <li>Wireshark, Nmap, Metasploit, Burp Suite, OpenVAS, SQLMap.</li>
+              <li>ELK Stack, Volatility, FTK, Autopsy.</li>
+              <li>Kali Linux, Ubuntu, Windows.</li>
+            </ul>
+          </article>
+          <article class='panel'>
+            <h3>Engineering Stack</h3>
+            <ul>
+              <li>Python, Java, SQL, Bash, HTML/CSS.</li>
+              <li>Pandas, NumPy, BeautifulSoup, Scikit-learn.</li>
+              <li>AWS services: EC2, S3, IAM, VPC, RDS, Lambda.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id='projects' class='section'>
+      <div class='container'>
+        <h2>Projects</h2>
+        <div class='project-list'>
+          <article class='panel project'>
+            <h3>SQL Injection Detection and Automation Tool</h3>
+            <p>Automated web vulnerability scanning workflow for identifying SQL injection risk.</p>
+            <ul>
+              <li>Integrated sqlmapapi, requests, and BeautifulSoup for endpoint discovery and form analysis.</li>
+              <li>Automated repeatable testing flow to reduce manual effort during assessment.</li>
+              <li>Generated structured outputs with remediation recommendations for governance use.</li>
+            </ul>
+          </article>
+          <article class='panel project'>
+            <h3>Stock Market ETL Pipeline</h3>
+            <p>Multi-source financial ETL project with data quality controls and risk-facing outputs.</p>
+            <ul>
+              <li>Extracted and consolidated data using Python APIs, scraping, and SQL transformations.</li>
+              <li>Implemented cleaning and validation for more reliable analysis workflows.</li>
+              <li>Built dashboard-ready datasets for anomaly monitoring and decision support in Power BI.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id='certifications' class='section'>
+      <div class='container'>
+        <h2>Certifications</h2>
+        <div class='cert-grid'>
+          <article class='cert-item'>
+            <h3>Google Cybersecurity Professional Certificate</h3>
+            <p>Coursera and Google | 2023</p>
+          </article>
+          <article class='cert-item'>
+            <h3>AWS Cloud Foundation and Architecture</h3>
+            <p>AWS Academy | 2024</p>
+          </article>
+          <article class='cert-item'>
+            <h3>Cybersecurity and Ethical Hacking</h3>
+            <p>Blackbucks Education | 2025</p>
+          </article>
+          <article class='cert-item'>
+            <h3>Oracle Certified Professional: Java SE 17 Developer</h3>
+            <p>Oracle | 2025</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id='contact' class='section'>
+      <div class='container'>
+        <h2>Contact</h2>
+        <p class='lead'>
+          Open to Security Analyst opportunities, internships, and collaborative security projects.
+        </p>
+        <div class='contact-wrap'>
+          <ul class='contact-links'>
+            <li><a href='mailto:connectwithezhil@gmail.com'>Email: connectwithezhil@gmail.com</a></li>
+            <li><a href='tel:+916383720169'>Phone: +91 63837 20169</a></li>
+            <li><a href='https://www.linkedin.com/in/ezhil-prasaath/' target='_blank' rel='noopener'>LinkedIn Profile</a></li>
+            <li><a href='https://github.com/EzhilPrasaath' target='_blank' rel='noopener'>GitHub Profile</a></li>
+            <li><a href='https://ezhilprasaath.com/' target='_blank' rel='noopener'>Portfolio Domain</a></li>
+          </ul>
+          <article class='panel'>
+            <h3>Current Profile</h3>
+            <ul>
+              <li>Location: India</li>
+              <li>Education: B.Tech CSE, VIT Andhra Pradesh</li>
+              <li>Focus: Security operations, automation, and cloud-aware risk analysis</li>
+            </ul>
+          </article>
+        </div>
+        <p class='footer-note'>Copyright <span id='year'></span> Ezhil Prasaath. All rights reserved.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById('menuToggle');
+      var nav = document.getElementById('siteNav');
+      var year = document.getElementById('year');
+
+      if (year) {
+        year.textContent = String(new Date().getFullYear());
+      }
+
+      if (!toggle || !nav) {
+        return;
+      }
+
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      nav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
-
